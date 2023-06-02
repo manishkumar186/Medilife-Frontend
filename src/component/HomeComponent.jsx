@@ -71,12 +71,12 @@ class HomeComponent extends Component {
                     </div>
 
                     <div className='row'>
-                        <div className='col-md-12'>
+                        <div className='col-md-12 p-0'>
                             <h5 className='bg-dark text-light text-center'><marquee behavior="" direction="left">Medicine Category</marquee></h5>
                         </div>
                     </div>
 
-                    <div className="row mt-5">
+                    <div className="row">
                         {this.state.product.map(data =>
                             <div className="col-md-3 mt-5 mb-2">
                                 <div className="card">
