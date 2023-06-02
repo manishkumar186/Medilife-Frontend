@@ -16,10 +16,10 @@ class FooterComponent extends Component {
                             <img src="" alt=""></img>
                             <span style={{ color: "white", fontSize: "20px" }}>MediLife</span>
                             <p style={{ color: "white" }}>
-                                <small>5th flora, 700/D kings road, green<br></br>
-                                    lane New Delhi-1782<br></br>
+                                <small>U/G/F Uttam Nagar West,Om Vihar<br></br>
+                                Near Metro Piller No.700, New Delhi-110059<br></br>
                                     +91 7973474237<br></br>
-                                    contact@medilife.com</small></p>
+                                    maniskmr555@gmail.com</small></p>
                         </div>
 
                         <div class="col-md-4 p-3 text-center">
@@ -34,9 +34,9 @@ class FooterComponent extends Component {
                         </div>
 
                         <div class="col-md-4 p-3" style={{ color: "white" }}>
-                            <p>We help 24*7</p>
+                            <p><em>We help </em> <ins>24*7</ins></p>
                             <p><em>Contact: <ins>+91 7973474237</ins></em></p>
-                            <p><em>Email: <ins>support.medilife@gmail.com</ins></em></p>
+                            <p><em>Email: <ins>maniskmr555@gmail.com</ins></em></p>
 
                         </div>
                         <div class="col-md-12 text-center">
