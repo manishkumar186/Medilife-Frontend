@@ -40,9 +40,20 @@ class LoginComponent extends Component {
             let datas = { userName: this.state.userName, userPassword: this.state.userPassword };
             AddressService.createLogin(datas).then(res => {
                 localStorage.setItem('jwtToken', res.data.token);
-                localStorage.setItem('userDetail', JSON.stringify(res.data));
-                localStorage.setItem('detail', JSON.stringify(res.data.userName));
-                this.props.history.push("/");
+
+                
+              
+                axios.get('http://medilife.ap-south-1.elasticbeanstalk.com/medilife/forUser?userName=' + datas['userName']).then(
+                    response => {
+
+
+                        localStorage.setItem('userDetail', JSON.stringify(response.data));
+                        localStorage.setItem('detail', JSON.stringify(response.data.userName));
+                        this.props.history.push("/");
+                    }
+                )
+
+
 
             })
         }
