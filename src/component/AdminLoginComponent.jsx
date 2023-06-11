@@ -40,9 +40,15 @@ class AdminLoginComponent extends Component {
             AddressService.createLogin(datas).then(res => {
 
                 localStorage.setItem('jwtToken', res.data.token);
-                localStorage.setItem('adminDetail', JSON.stringify(res.data.userName));
-                this.props.history.push("/");
+                
                
+                axios.get('http://medilife.ap-south-1.elasticbeanstalk.com/medilife/forUser?userName=' + datas['userName']).then(
+                    response => {
+                        localStorage.setItem('adminDetail', JSON.stringify(response.data.userName));
+                        this.props.history.push("/");
+                    }
+                )
+
             })
         }
 
