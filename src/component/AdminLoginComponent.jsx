@@ -39,19 +39,10 @@ class AdminLoginComponent extends Component {
             let datas = { userName: this.state.userName, userPassword: this.state.userPassword };
             AddressService.createLogin(datas).then(res => {
 
-                localStorage.setItem('jwtToken', res.data.jwtToken);
-                const config = {
-                    headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem('jwtToken')
-                    }
-                };
-                axios.get('http://authentications.ap-south-1.elasticbeanstalk.com/forAdmin?userName=' + datas['userName'], config).then(
-                    response => {
-                        localStorage.setItem('adminDetail', JSON.stringify(response.data.userName));
-                        this.props.history.push("/");
-                    }
-                )
-
+                localStorage.setItem('jwtToken', res.data.token);
+                localStorage.setItem('adminDetail', JSON.stringify(res.data.userName));
+                this.props.history.push("/");
+               
             })
         }
 
