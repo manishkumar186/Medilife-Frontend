@@ -39,24 +39,10 @@ class LoginComponent extends Component {
         else {
             let datas = { userName: this.state.userName, userPassword: this.state.userPassword };
             AddressService.createLogin(datas).then(res => {
-                localStorage.setItem('jwtToken', res.data.jwtToken);
-
-                const config = {
-                    headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem('jwtToken')
-                    }
-                };
-                axios.get('http://authentications.ap-south-1.elasticbeanstalk.com/forUser?userName=' + datas['userName'], config).then(
-                    response => {
-
-
-                        localStorage.setItem('userDetail', JSON.stringify(response.data));
-                        localStorage.setItem('detail', JSON.stringify(response.data.userName));
-                        this.props.history.push("/");
-                    }
-                )
-
-
+                localStorage.setItem('jwtToken', res.data.token);
+                localStorage.setItem('userDetail', JSON.stringify(res.data));
+                localStorage.setItem('detail', JSON.stringify(res.data.userName));
+                this.props.history.push("/");
 
             })
         }
