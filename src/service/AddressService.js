@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 
-const signup_API_BASE_URL = "http://authentications.ap-south-1.elasticbeanstalk.com/registerNewUser";
+const signup_API_BASE_URL = "http://medilife.ap-south-1.elasticbeanstalk.com/medilife/register";
 
 
-const login_API_BASE_URL = "http://authentications.ap-south-1.elasticbeanstalk.com/authenticate";
+const login_API_BASE_URL = "http://medilife.ap-south-1.elasticbeanstalk.com/medilife/token";
 
 
 const all_PRODUCT_BASE_URL = "http://medilife.ap-south-1.elasticbeanstalk.com/medilife/allProduct";
